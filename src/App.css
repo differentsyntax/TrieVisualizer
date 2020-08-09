@@ -1,38 +1,380 @@
-.App {
+body {
+  font-family: Nunito Sans;
+  font-size: 18px;
+  background-color: white;
+}
+
+h1 {
+  font-family: Nunito Sans;
+}
+
+#header-left{
+  margin-top: 95px;
+  color: maroon;
+}
+
+#header-right{
+  margin-top: 60px;
+  color: green;
+}
+
+#input-words-header{
+  position: relative;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  /* text-align: center; */
+  font-family: Nunito Sans, sans-serif;
+  font-weight: 400;
+}
+
+#employer-form-header{
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
   text-align: center;
+  font-family: Nunito Sans, sans-serif;
+  font-weight: 400;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.textDragon { 
+  font-family: Nunito Sans, sans-serif;
+  position: fixed;
+  visibility: visible; 
+  top: 1%;
+  left: 1%;
+  z-index: 200;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0.8%;
+  /* border: 10px solid black; */
+  background-color:white;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3, h4 {
+  margin-bottom: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+nav button {
+  flex:1;
+  border: 1px solid black;
+  background-color: green;
+  border-radius: 5px;
+  margin: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+  font-size: 15px;
+}
+
+nav a {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav button:hover {
+  color: white;
+  background-color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  width: 40%;
+  z-index: 200;
+  position: fixed;
+  top: 0%;
+  left: 40%;
+}
+
+.textBackground {
+  background-color: rgba(5,4,2,0.3);
+  width: 75%;
+  margin-left:auto;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+#homepage-stuff{
+  display: flex;
+}
+
+#info-left {
+  text-align: center;
+  font-family: Nunito Sans, sans-serif;
+  font-weight: 400;
+  flex: 1;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+
+a:hover {
+  color: white;
+}
+
+#info-left p {
+  background-color:rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border: rgba(5,4,2,0.3);
+  border-radius: 10px;
+}
+
+#info-right {
+  flex: 1;
+  text-align: center;
+  font-family: Nunito Sans, sans-serif;
+  font-weight: 400;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 6%;
+}
+
+#info-right p {
+  background-color:rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border: rgba(5,4,2,0.3);
+  border-radius: 10px;
+}
+
+#info-left button {
+  display: block;
+  background-color: orange;
+  border: 1px solid #00008B;
+  border-radius: 5px;
+  box-shadow: 5px 5px #00008B;
+  top: 0px;
+  color: black;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Arial';
+  margin-top: 30px;
+  transition: all ease 0.3s;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  width: 100%;
+  z-index: -1;
+}
+
+#home-img {
+  width: 100%;
+  margin-left: 0;
+  z-index: -1;
+}
+
+#info-right button {
+  display: block;
+  background-color: orange;
+  border: 1px solid #00008B;
+  border-radius: 5px;
+  box-shadow: 5px 5px #00008B;
+  top: 0px;
+  color: black;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Arial';
+  margin-top: 30px;
+  transition: all ease 0.3s;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#info-left button:active {
+  box-shadow: 0 3px 0 black;
+  background-color: black;
+  top: 3px;
+}
+
+#info-right button:active {
+  box-shadow: 0 3px 0 black;
+  background-color: black;
+  top: 3px;
+}
+
+#info-left a:hover {
+  color: white;
+}
+
+#info-right a:hover {
+  color: white;
+}
+
+#status {
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #21ce99;
+  overflow: hidden;
+  text-align: center;
+  font-size: 13px;
+  padding: 0;
+}
+
+#status p {
+  width: 100%;
+}
+
+#note {
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 0.6%;
+  padding: 0.6%;
+}
+
+#input-words-stuff {
+  display: flex;
+  padding: 2%;
+}
+
+#input-words-side {
+  flex: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#visual-side {
+  flex: 1;
+  margin-right: 10%;
+}
+
+#visual-side h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+#resource-list {
+  background-color:rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding: 10px;
+  border: rgba(5,4,2,0.3);
+  border-radius: 20px;
+}
+
+#resource-list p {
+  display: inline-block;
+  position: relative;
+  text-align: "right";
+  margin-left: 50px;
+}
+
+#resource-list button {
+  padding: 20px;
+  border: rgba(5,4,2,0.3);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#employers-form-side {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.MuiButton-label:hover {
+  color: white;
+}
+
+#input-words-submit {
+  display: block;
+  background-color: green;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
+  top: 0px;
+  color: white;
+  text-align: center;
+  padding: 1px 5px 1px 5px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Arial';
+  margin-top: 30px;
+  transition: all ease 0.3s;
+  width: 12%;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+#input-words-submit:hover {
+  background-color: black;
+  box-shadow: 5px 5px white;
+}
+
+#employerform-submit {
+  display: block;
+  background-color: orange;
+  border: 1px solid #00008B;
+  border-radius: 5px;
+  box-shadow: 5px 5px #00008B;
+  top: 0px;
+  color: black;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Arial';
+  margin-top: 30px;
+  transition: all ease 0.3s;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+#notfound {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  text-align: center;
+}
+
+#phoneNumber {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  padding-bottom: 20px;
+}
+
+.errors {
+  color: red;
+}
+
+#myimg {
+  height: 6%;
+  width: 3.2%;
+  position: fixed;
+  bottom: 4.7%;
+  left: 1.7%;
+  z-index: 200;
+}
+
+#myinfo {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+}
+
+#myinfo:hover {
+  color: black;
+}
+
+#mui-component-select-major{
+  width: 200px;
 }
