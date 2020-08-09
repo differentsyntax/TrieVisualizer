@@ -7,13 +7,13 @@ import { TextField, Button, MenuItem } from '@material-ui/core'
 // import majors from '../data/majors'
 import swal from 'sweetalert';
 
-const formURL = "https://q4c0oh5zd6.execute-api.us-east-1.amazonaws.com/Prod/submitForm"
+const formURL = "http://localhost:5000/addWords/save"
 
 const InputWords = () => (
 	<div id = "input-word">
 		<Formik
 			initialValues={{
-					wordArray: ''
+					wordsArray: ''
 			}}
 			validationSchema={validationSchema}
 			onSubmit={(data, {setSubmitting, resetForm }) => {
@@ -25,16 +25,20 @@ const InputWords = () => (
 					xhr.open('post', formURL, true)
 					xhr.setRequestHeader('Accept', 'application/json; charset=utf-8')
 					xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
+					xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
 					xhr.send(JSON.stringify(data))
 
 					xhr.onloadend = response => {
+						
 						if (response.target.status === 200) {
-							resetForm();
-							swal("Your info is in! We'll reach out to you soon!")
-						} else {
-							swal("There was some error! Please try again!")
-							console.error(JSON.parse(response));
+							swal(response.target.response);
 						}
+						// 	resetForm();
+						//  swal("Your info is in! We'll reach out to you soon!")
+						// } else {
+						// 	swal("There was some error! Please try again!")
+						// 	console.error(JSON.parse(response));
+						// }
 					}
 
 					setSubmitting(false)
@@ -44,9 +48,9 @@ const InputWords = () => (
         <Form>
 					<div>
 						<div className = "input-words-field">
-							<Field fullWidth label = "apple, banana, grapes..." margin = "normal" variant = "outlined" type="name" name="wordArray" as={TextField}/>
+							<Field fullWidth label = "apple, banana, grapes..." margin = "normal" variant = "outlined" type="name" name="wordsArray" as={TextField}/>
 							<div className = "errors">
-							<ErrorMessage name="wordArray"/>
+							<ErrorMessage name="wordsArray"/>
 							</div>
 						</div>
 						<div>
@@ -63,7 +67,7 @@ const InputWords = () => (
 
 const validationSchema = yup.object().shape(
 	{
-		wordArray: yup
+		wordsArray: yup
 		.string('*should be a string')
 		.required('*required field')
 	}
