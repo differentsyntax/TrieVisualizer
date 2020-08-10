@@ -2,10 +2,11 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import { TextField, Button, MenuItem } from '@material-ui/core'
-// import Autocomplete from '@material-ui/lab/Autocomplete'
 // import countries from '../data/country'
 // import majors from '../data/majors'
 import swal from 'sweetalert';
+import SaveWords from '../components/saveWords'
+import { render } from '@testing-library/react'
 
 const formURL = "http://localhost:5000/addWords/save"
 
@@ -31,7 +32,7 @@ const InputWords = () => (
 					xhr.onloadend = response => {
 						
 						if (response.target.status === 200) {
-							swal(response.target.response);
+							displayDiagram(response.target.response);
 						}
 						// 	resetForm();
 						//  swal("Your info is in! We'll reach out to you soon!")
@@ -48,7 +49,7 @@ const InputWords = () => (
         <Form>
 					<div>
 						<div className = "input-words-field">
-							<Field fullWidth label = "apple, banana, grapes..." margin = "normal" variant = "outlined" type="name" name="wordsArray" as={TextField}/>
+							<Field fullWidth label = "app, application, shop, shopper, awe, awesome..." margin = "normal" placeholder="app, application, shop, shopper, awe, awesome" variant = "outlined" type="name" name="wordsArray" as={TextField}/>
 							<div className = "errors">
 							<ErrorMessage name="wordsArray"/>
 							</div>
@@ -64,6 +65,12 @@ const InputWords = () => (
     </Formik>
 	</div>
 )
+
+function displayDiagram(data) {
+	// var data = JSON.parse(data)
+	console.log(data)
+	document.getElementById("visual-side").innerHTML = "<pre> " + data + "</pre>"
+}
 
 const validationSchema = yup.object().shape(
 	{
