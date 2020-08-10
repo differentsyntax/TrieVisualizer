@@ -2,18 +2,19 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import { TextField, Button, MenuItem } from '@material-ui/core'
-// import Autocomplete from '@material-ui/lab/Autocomplete'
 // import countries from '../data/country'
 // import majors from '../data/majors'
 import swal from 'sweetalert';
+import SaveWords from '../components/saveWords'
+import { render } from '@testing-library/react'
 
-const formURL = "https://q4c0oh5zd6.execute-api.us-east-1.amazonaws.com/Prod/submitForm"
+const formURL = "http://localhost:5000/searchWord/find"
 
 const GetWord = () => (
 	<div id = "input-word">
 		<Formik
 			initialValues={{
-					wordArray: ''
+					word: ''
 			}}
 			validationSchema={validationSchema}
 			onSubmit={(data, {setSubmitting, resetForm }) => {
@@ -25,16 +26,22 @@ const GetWord = () => (
 					xhr.open('post', formURL, true)
 					xhr.setRequestHeader('Accept', 'application/json; charset=utf-8')
 					xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
+					xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
 					xhr.send(JSON.stringify(data))
 
 					xhr.onloadend = response => {
+						console.log("Hey!")
+						
 						if (response.target.status === 200) {
-							resetForm();
-							swal("Your info is in! We'll reach out to you soon!")
-						} else {
-							swal("There was some error! Please try again!")
-							console.error(JSON.parse(response));
+							console.log(response.target.response)
+							displayDiagram(response.target.response);
 						}
+						// 	resetForm();
+						//  swal("Your info is in! We'll reach out to you soon!")
+						// } else {
+						// 	swal("There was some error! Please try again!")
+						// 	console.error(JSON.parse(response));
+						// }
 					}
 
 					setSubmitting(false)
@@ -44,9 +51,9 @@ const GetWord = () => (
         <Form>
 					<div>
 						<div className = "input-words-field">
-							<Field fullWidth label = "apple" margin = "normal" variant = "outlined" type="name" name="wordArray" as={TextField}/>
+							<Field fullWidth label = "app" margin = "normal" placeholder="app" variant = "outlined" type="name" name="word" as={TextField}/>
 							<div className = "errors">
-							<ErrorMessage name="wordArray"/>
+							<ErrorMessage name="word"/>
 							</div>
 						</div>
 						<div>
@@ -61,9 +68,15 @@ const GetWord = () => (
 	</div>
 )
 
+function displayDiagram(data) {
+	// var data = JSON.parse(data)
+	console.log(data)
+	document.getElementById("visual-side").innerHTML = "<p> " + data + "</p>"
+}
+
 const validationSchema = yup.object().shape(
 	{
-		wordArray: yup
+		word: yup
 		.string('*should be a string')
 		.required('*required field')
 	}
