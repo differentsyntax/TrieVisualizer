@@ -4,7 +4,7 @@ import Anime, {anime} from 'react-anime'
 import { Link } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import InputWords from '../components/inputWords'
-// import StudentResources from '../components/resources'
+import VisualSide from '../components/visualSide'
 
 const AddWords = () => (
 	<>
@@ -30,7 +30,7 @@ const AddWords = () => (
 				<InputWords/>
 			</div>
 			<div id = "visual-side">
-				{/* <StudentResources/>	 */}
+				<VisualSide/>
 			</div>
 		</div>
 	</div>

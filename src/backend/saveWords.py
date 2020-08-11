@@ -40,8 +40,14 @@ def add():
 		words = words['wordsArray'].replace(' ', '').split(',')
 		if words:
 				data = saveWords(words)
+				# f = open("trie.json", "w")
+				# f.write('{ "trie" :')
+				# f.close()
 				with open('trie.json', 'w') as outfile:
 					json.dump(data, outfile)
+				# f = open("trie.json", "a")
+				# f.write("}")
+				# f.close()
 				return jsonify(data)
 		return "Error"
 
@@ -53,11 +59,12 @@ def saveWords(words):
 	return root
 
 def addWord(word, root):
+	curr_node = root
 	for letter in word:
-		if letter not in root:
-			root[letter] = {}
-		root = root[letter]
-	root['*'] = '*'
+		if letter not in curr_node:
+			curr_node[letter] = {}
+		curr_node = curr_node[letter]
+	curr_node['*'] = '*'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=5000)

@@ -8,7 +8,6 @@ import './App.css';
 import Home from './home'
 import AddWords from './pages/AddWords'
 import SearchWord from './pages/SearchWord'
-import SaveWords from './components/saveWords'
 // import Notfoundpage from './pages/notfoundpage'
 import WebFont from 'webfontloader'
 

@@ -5,7 +5,6 @@ import { TextField, Button, MenuItem } from '@material-ui/core'
 // import countries from '../data/country'
 // import majors from '../data/majors'
 import swal from 'sweetalert';
-import SaveWords from '../components/saveWords'
 import { render } from '@testing-library/react'
 
 const formURL = "http://localhost:5000/addWords/save"
@@ -68,8 +67,8 @@ const InputWords = () => (
 
 function displayDiagram(data) {
 	// var data = JSON.parse(data)
-	console.log(data)
-	document.getElementById("visual-side").innerHTML = "<pre> " + data + "</pre>"
+	// console.log(data)
+	// document.getElementById("visual-side").innerHTML = "<pre> " + data + "</pre>"
 }
 
 const validationSchema = yup.object().shape(
