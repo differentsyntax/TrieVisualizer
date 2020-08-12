@@ -14,10 +14,13 @@ const Home = () => (
 		<nav>
 			<ul>
 				<button>
-					<Link to="/addWords">Add Words</Link>
+					<Link to="/addWords">Insert</Link>
 				</button>
 				<button>
-					<Link to="/searchWord">Search Word</Link>
+					<Link to="/removeWord">Clear</Link>
+				</button>
+				<button>
+					<Link to="/searchWord">Search</Link>
 				</button>
 			</ul>
 		</nav>

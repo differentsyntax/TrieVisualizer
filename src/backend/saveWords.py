@@ -33,6 +33,12 @@ def getWord(word):
 	else:
 		return "Not Found"
 
+@app.route('/removeWord/remove', methods = ['POST'])
+def remove():
+	data = {'*':'*'}
+	with open('trie.json', 'w') as outfile:
+		json.dump(data, outfile)
+
 @app.route('/addWords/save', methods = ['POST'])
 def add():
 	if request.method == 'POST':
@@ -52,7 +58,9 @@ def add():
 		return "Error"
 
 def saveWords(words):
-	root = {'*': '*'}
+	with open('trie.json') as json_file:
+		data = json.load(json_file)
+	root = data
 	for word in words:
 		addWord(word, root)
 	

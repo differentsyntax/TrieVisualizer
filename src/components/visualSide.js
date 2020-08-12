@@ -4,7 +4,7 @@ import myData from '../backend/trie';
 
 const VisualSide = () => (
 
-	<ReactJson src={myData} theme="monokai"/>
+	<ReactJson src={myData}/>
 
 )
 

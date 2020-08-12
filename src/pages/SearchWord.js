@@ -4,7 +4,7 @@ import Anime, {anime} from 'react-anime'
 import { Link } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import GetWord from '../components/getWord'
-// import StudentResources from '../components/resources'
+import VisualSide from '../components/visualSide'
 
 const SearchWord = () => (
 	<>
@@ -16,10 +16,13 @@ const SearchWord = () => (
 	<nav>
 		<ul>
 			<button>
-				<Link to="/addWords">Add Words</Link>
+				<Link to="/addWords">Insert</Link>
 			</button>
 			<button>
-				<Link to="/searchWord">Search Word</Link>
+				<Link to="/removeWord">Remove</Link>
+			</button>
+			<button>
+				<Link to="/searchWord">Search</Link>
 			</button>
 		</ul>
 	</nav>
@@ -29,8 +32,9 @@ const SearchWord = () => (
 			<div id = "input-words-side"> 
 				<GetWord/>
 			</div>
+			<h3 id = "found"></h3>
 			<div id = "visual-side">
-				{/* <StudentResources/>	 */}
+				<VisualSide/>
 			</div>
 		</div>
 	</div>

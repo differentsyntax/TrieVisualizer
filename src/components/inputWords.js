@@ -6,6 +6,7 @@ import { TextField, Button, MenuItem } from '@material-ui/core'
 // import majors from '../data/majors'
 import swal from 'sweetalert';
 import { render } from '@testing-library/react'
+import { Link } from 'react-router-dom'
 
 const formURL = "http://localhost:5000/addWords/save"
 
@@ -55,7 +56,7 @@ const InputWords = () => (
 						</div>
 						<div>
 							<Button id = "input-words-submit" fullWidth variant="outlined" color = "primary" type="submit" disabled={isSubmitting}>
-								Submit
+								Enter
 							</Button>
 						</div>
 					</div>

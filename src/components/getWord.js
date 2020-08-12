@@ -56,8 +56,8 @@ const GetWord = () => (
 							</div>
 						</div>
 						<div>
-							<Button id = "input-words-submit" fullWidth variant="outlined" color = "primary" type="submit" disabled={isSubmitting}>
-								Submit
+							<Button id = "input-words-search" fullWidth variant="outlined" color = "primary" type="submit" disabled={isSubmitting}>
+								Search
 							</Button>
 						</div>
 					</div>
@@ -70,7 +70,7 @@ const GetWord = () => (
 function displayDiagram(data) {
 	// var data = JSON.parse(data)
 	console.log(data)
-	document.getElementById("visual-side").innerHTML = "<p> " + data + "</p>"
+	document.getElementById("found").innerHTML = "<pre> " + data + "</pre>"
 }
 
 const validationSchema = yup.object().shape(

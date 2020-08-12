@@ -13,6 +13,8 @@
     "react-d3-tree": "^1.16.1",
     "react-dom": "^16.13.1",
     "react-json-view": "^1.19.1",
+    "react-native-family-tree": "0.0.31",
+    "react-native-svg": "^12.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-svg-tree": "^0.4.1",
@@ -28,6 +30,15 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-react-jsx"
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -42,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.10.4"
   }
 }
