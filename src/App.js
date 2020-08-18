@@ -30,7 +30,6 @@ class App extends Component {
               <Route path = "/" component = {Home} exact />
               <Route path = "/addWords" component = {AddWords} exact/>
               <Route path = "/removeWord" component = {RemoveWord} exact/>
-              {/* <Route path = "/addWords/save" component = {Home} exact/> */}
               <Route path = "/searchWord" component = {SearchWord} exact/>
               {/* <Route component = {Notfoundpage} /> */}
             </Switch>

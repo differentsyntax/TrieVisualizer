@@ -19,7 +19,7 @@ const SearchWord = () => (
 				<Link to="/addWords">Insert</Link>
 			</button>
 			<button>
-				<Link to="/removeWord">Remove</Link>
+				<Link to="/removeWord">Clear</Link>
 			</button>
 			<button>
 				<Link to="/searchWord">Search</Link>
