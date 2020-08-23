@@ -32,7 +32,7 @@ const InputWords = () => (
 					xhr.onloadend = response => {
 						
 						if (response.target.status === 200) {
-							displayDiagram(response.target.response);
+							console.log(response.target.response);
 						}
 						// 	resetForm();
 						//  swal("Your info is in! We'll reach out to you soon!")
@@ -65,12 +65,6 @@ const InputWords = () => (
     </Formik>
 	</div>
 )
-
-function displayDiagram(data) {
-	// var data = JSON.parse(data)
-	// console.log(data)
-	// document.getElementById("visual-side").innerHTML = "<pre> " + data + "</pre>"
-}
 
 const validationSchema = yup.object().shape(
 	{
